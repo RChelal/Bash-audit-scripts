@@ -9,13 +9,11 @@ project="project1"
 token="sqp_b8de888token1"
 
 runscanner() {
-
     echo "Initiating $project source code audit"
     cd "$path$project"
     "$sonarscanner" "$projectvar$project" "$scanner$token"
     echo "Completed scanning $project source code audit. Proceed to SonarQube portal for source code review."
 }
-
       echo "Confirming running images"
       sudo docker ps | grep $docker
 
