@@ -1,7 +1,6 @@
 #!/bin/bash
 sonarscanner="/opt/sonar-scanner/bin/sonar-scanner"
-path1="/home/rodney/Desktop/PGUPGRADE/2/"
-path2="/home/rodney/Desktop/PGUPGRADE/3/"
+path1="/home/rodney/Desktop/"
 docker="92801401b2f2"
 projectvar="-Dsonar.projectKey="
 scanner="-Dsonar.sources=src -Dsonar.java.binaries=src -Dsonar.host.url=http://localhost:9000 -Dsonar.token="
@@ -16,7 +15,6 @@ runscanner() {
 }
       echo "Confirming running images"
       sudo docker ps | grep $docker
-
 if docker ps | grep -q $docker; then
       # Run the sonar-scanner commands
       # run first source code
