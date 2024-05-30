@@ -7,6 +7,7 @@ scanner="-Dsonar.sources=src -Dsonar.java.binaries=src -Dsonar.host.url=http://l
 project="project1"
 token="sqp_b8de888token1"
 
+# java scanner
 runscanner() {
     echo "Initiating $project source code audit";
     cd $path$project;
