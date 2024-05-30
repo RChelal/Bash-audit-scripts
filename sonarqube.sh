@@ -1,7 +1,7 @@
 #!/bin/bash
 sonarscanner="/opt/sonar-scanner/bin/sonar-scanner"
-path1="/home/rodney/Desktop/"
-docker="92801401b2f2"
+path1="/home/spider/Desktop/"
+docker="92801401b23ef2"
 projectvar="-Dsonar.projectKey="
 scanner="-Dsonar.sources=src -Dsonar.java.binaries=src -Dsonar.host.url=http://localhost:9000 -Dsonar.token="
 project="project1"
