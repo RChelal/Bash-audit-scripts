@@ -1,6 +1,6 @@
 #!/bin/bash
 sonarscanner="/opt/sonar-scanner/bin/sonar-scanner"
-path1="/home/spider/Desktop/"
+path="/home/spider/Desktop/"
 docker="92801401b23ef2"
 projectvar="-Dsonar.projectKey="
 scanner="-Dsonar.sources=src -Dsonar.java.binaries=src -Dsonar.host.url=http://localhost:9000 -Dsonar.token="
@@ -9,8 +9,8 @@ token="sqp_b8de888token1"
 
 # java scanner
 runscanner() {
-    echo "Initiating $project source code audit";
-    cd $path$project;
+    echo "Initiating $project soanarqube source code audit";
+    cd $path$project
     $sonarscanner $projectvar$project $scanner$token;
     echo "Completed scanning $project source code audit. Proceed to SonarQube portal for source code review.";
     sleep 3
@@ -24,8 +24,11 @@ if docker ps | grep -q $docker; then
       # create variable for project channel request run seconf source code function
 	project="project2"
 	token="sqp_b8de88token2"
- 	runscanner
+      runscanner
       # run 3rd source code audit  
+      project="project3"
+	token="sqp_b8de88token3"
+      runscanner
 
       echo "Thank you for using sonarqube scanning tool adios. Proceed to the sonarqube portal to get the results of the report"
 else
